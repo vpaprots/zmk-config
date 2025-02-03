@@ -1,0 +1,40 @@
+# Copyright (c) 2020 Pete Johanson
+# SPDX-License-Identifier: MIT
+
+config SHIELD_FERNE_LEFT
+    def_bool $(shields_list_contains,ferne_left)
+
+config SHIELD_FERNE_RIGHT
+    def_bool $(shields_list_contains,ferne_right)
+
+if SHIELD_FERNE_LEFT || SHIELD_FERNE_RIGHT
+
+config SHIELD_UNDERGLOW
+    bool "Per-key RGB"
+    imply SPI
+    imply WS2812_STRIP
+    imply ZMK_RGB_UNDERGLOW
+    imply ZMK_RGB_UNDERGLOW_EXT_POWER
+    depends on DT_HAS_WORLDSEMI_WS2812_SPI_ENABLED
+
+config SHIELD_SCREEN #TODO: more features
+    bool "Skree Display"
+    imply SPI
+    imply ZMK_DISPLAY
+    #imply ZMK_DISPLAY_WORK_QUEUE_DEDICATED
+    depends on DT_HAS_SHARP_LS0XX_ENABLED
+
+config SHIELD_TRACKBALL
+    bool "PMW3610 trackball"
+    imply SPI
+    imply PMW3610
+    imply ZMK_POINTING
+    imply ZMK_POINTING_SMOOTH_SCROLLING
+    depends on DT_HAS_PIXART_PMW3610_ENABLED
+
+config SHIELD_ENCODER
+    bool "Rotary EC11 encoder"
+    imply EC11
+    #imply EC11_TRIGGER_GLOBAL_THREAD
+    depends on DT_HAS_ALPS_EC11_ENABLED
+endif

@@ -1,0 +1,36 @@
+description: |
+  Charger driver for sk6812 using i2s 
+
+compatible: "zmk,sk6812-i2s"
+
+include: base.yaml
+
+properties:
+  i2s-dev:
+    type: phandle
+    required: true
+    description: Pointer to the I2S instance.
+    
+  chain-length:
+    type: int
+    required: true
+    description: |
+      The number of devices in the daisy-chain.
+
+  color-mapping:
+    type: array
+    required: true
+    description: |
+      Channel to color mapping (or pixel order).
+
+      For example a GRB channel to color mapping would be
+
+         color-mapping = <LED_COLOR_ID_GREEN
+                          LED_COLOR_ID_RED
+                          LED_COLOR_ID_BLUE>;
+
+  reset-delay:
+    type: int
+    default: 50
+    description: |
+      Minimum delay to wait (in microseconds) between frames

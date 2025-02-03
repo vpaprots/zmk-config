@@ -1,0 +1,43 @@
+if SHIELD_FERNE_LEFT
+    config ZMK_KEYBOARD_NAME
+        default "Ferne"
+
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+endif # SHIELD_FERNE_LEFT
+
+if SHIELD_FERNE_LEFT || SHIELD_FERNE_RIGHT
+    config ZMK_SPLIT
+        default y
+
+#    if ZMK_RGB_UNDERGLOW
+#        config SPI
+#            default y
+#
+#        config WS2812_STRIP
+#            default y
+#    endif # ZMK_RGB_UNDERGLOW
+#
+#    if USB
+#        config USB_NRFX
+#            default y
+#
+#        config USB_DEVICE_STACK
+#            default y
+#    endif # USB
+
+    config BT_CTLR
+        default BT
+
+#    config ZMK_BLE
+#        default y
+#
+#    config ZMK_USB
+#        default y
+#    
+#    config I2C
+#        default y
+#
+#    config ZMK_MAX17048
+#        default y
+endif

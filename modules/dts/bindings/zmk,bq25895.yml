@@ -1,0 +1,11 @@
+description: |
+  Charger driver for bq25895 
+
+compatible: "zmk,bq25895"
+
+include: i2c-device.yaml
+
+properties:
+  irq-gpios:
+    type: phandle-array
+    required: true

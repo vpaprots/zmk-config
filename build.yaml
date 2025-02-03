@@ -18,5 +18,6 @@
 #
 ---
 include:
-  - board: glove80_lh
-  - board: glove80_rh
+  - board: ferne_lh
+    # snippet: zmk-usb-logging
+  - board: ferne_rh

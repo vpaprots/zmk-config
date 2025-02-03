@@ -1,0 +1,16 @@
+config CHARGER_BQ25895
+	bool "BQ25895 Battery Charger"
+	default y
+	depends on DT_HAS_TI_BQ25895_ENABLED
+	select I2C
+	help
+	  Enable BQ25895 battery charger driver.
+
+config SK6812_STRIP_I2S
+	bool "I2S driver"
+	default y
+	depends on DT_HAS_ZMK_SK6812_I2S_ENABLED
+	select I2S
+	help
+	  Uses the I2S peripheral, memory usage is 4 bytes per color,
+	  times the number of pixels.

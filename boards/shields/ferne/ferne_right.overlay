@@ -1,0 +1,19 @@
+/*
+ * Copyright (c) 2025 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include "ferne.dtsi"
+
+&kscan_gpio0 {
+	col-offset = <5>;
+};
+
+&kscan_main0 {
+	col-offset = <5>;
+};
+
+&right_encoder {
+    status = "okay";
+};

@@ -1,0 +1,22 @@
+# Copyright (c) 2024 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config BOARD_FERNE
+	bool "Ferne"
+	imply ARM_MPU
+	imply GPIO
+	imply PINCTRL
+	imply ZMK_BLE
+	imply BT_CTLR
+	imply ZMK_USB
+	imply USB_NRFX
+
+if BOARD_FERNE
+
+config BOARD_MAX17048
+    bool "MAX17048 I2C-based Fuel Gauge"
+    imply ZMK_MAX17048
+    imply I2C
+	depends on DT_HAS_ZMK_MAXIM_MAX17048_ENABLED
+
+endif # BOARD_FERNE
