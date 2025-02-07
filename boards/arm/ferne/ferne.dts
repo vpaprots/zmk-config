@@ -22,13 +22,22 @@
 		zephyr,boot-mode = &retention0;
 		zephyr,flash = &flash0;
 		zmk,battery = &fuel_gauge;
+		zmk,default-power-domain = &core_power_domain;
 	};
 
-	EXT_POWER {
-        compatible = "zmk,ext-power-generic";
-        control-gpios = <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
-        init-delay-ms = <100>;
-    };
+	// EXT_POWER {
+    //     compatible = "zmk,ext-power-generic";
+    //     control-gpios = <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>;
+    //     init-delay-ms = <100>;
+    // };
+
+	core_power_domain: core_power_domain {
+		compatible = "power-domain-gpio", "power-domain";
+		startup-delay-us = <50000>;
+		off-on-delay-us = <50000>;
+		enable-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+		zephyr,pm-device-runtime-auto;
+	};
 
 	// nrf52840 has 256kb of RAM. Dedicate last byte for retained-ram
 	sram@2003FFFF {

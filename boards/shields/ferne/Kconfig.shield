@@ -14,7 +14,7 @@ config SHIELD_UNDERGLOW
     imply SPI
     imply WS2812_STRIP
     imply ZMK_RGB_UNDERGLOW
-    imply ZMK_RGB_UNDERGLOW_EXT_POWER
+    # imply ZMK_RGB_UNDERGLOW_EXT_POWER
     depends on DT_HAS_WORLDSEMI_WS2812_SPI_ENABLED
 
 config SHIELD_SCREEN #TODO: more features
