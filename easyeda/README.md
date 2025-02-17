@@ -1,3 +1,4 @@
+```
  usb-pd - needs more parts (reference to app note and the two chips)
  power mux - might be more full-proof, but needs more programming for auto-detection
        - use one or the other
@@ -33,7 +34,7 @@ Note: this is written, at times, as instructions. Sometimes it is. And sometimes
 
 Note: treat batteries with respect you would give a table saw; its an extremely useful tool, but also powerful enough to take your fingers off. Whether this circuit is safe (and safe not just for the day but years) is for you to decide.
 
-
+```
 
 Freerouting.jar
 
