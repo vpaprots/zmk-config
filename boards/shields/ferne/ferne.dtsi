@@ -26,60 +26,60 @@
 		transform = <&default_transform>;
 		kscan = <&kscan0>;
 
-		keys  //                     w   h    x    y     rot    rx    ry
-			= <&key_physical_attrs 100 100    0    0       0     0     0>
-			, <&key_physical_attrs 100 100  900    0       0     0     0>
-			, <&key_physical_attrs 100 100    0  100       0     0     0>
-			, <&key_physical_attrs 100 100  100  100       0     0     0>
-			, <&key_physical_attrs 100 100  200  100       0     0     0>
-			, <&key_physical_attrs 100 100  300  100       0     0     0>
-			, <&key_physical_attrs 100 100  400  100       0     0     0>
-			, <&key_physical_attrs 100 100  500  100       0     0     0>
-			, <&key_physical_attrs 100 100  600  100       0     0     0>
-			, <&key_physical_attrs 100 100  700  100       0     0     0>
-			, <&key_physical_attrs 100 100  800  100       0     0     0>
-			, <&key_physical_attrs 100 100  900  100       0     0     0>
-			, <&key_physical_attrs 100 100    0  200       0     0     0>
-			, <&key_physical_attrs 100 100  100  200       0     0     0>
-			, <&key_physical_attrs 100 100  200  200       0     0     0>
-			, <&key_physical_attrs 100 100  300  200       0     0     0>
-			, <&key_physical_attrs 100 100  400  200       0     0     0>
-			, <&key_physical_attrs 100 100  500  200       0     0     0>
-			, <&key_physical_attrs 100 100  600  200       0     0     0>
-			, <&key_physical_attrs 100 100  700  200       0     0     0>
-			, <&key_physical_attrs 100 100  800  200       0     0     0>
-			, <&key_physical_attrs 100 100  900  200       0     0     0>
-			, <&key_physical_attrs 100 100    0  300       0     0     0>
-			, <&key_physical_attrs 100 100  100  300       0     0     0>
-			, <&key_physical_attrs 100 100  200  300       0     0     0>
-			, <&key_physical_attrs 100 100  300  300       0     0     0>
-			, <&key_physical_attrs 200 100  400  300       0     0     0>
-			, <&key_physical_attrs 100 100  500  300       0     0     0>
-			, <&key_physical_attrs 100 100  600  300       0     0     0>
-			, <&key_physical_attrs 100 100  700  300       0     0     0>
-			, <&key_physical_attrs 100 100  800  300       0     0     0>
-			, <&key_physical_attrs 100 100  900  300       0     0     0>
-			, <&key_physical_attrs 100 100    0  400       0     0     0>
-			, <&key_physical_attrs 100 100  100  400       0     0     0>
-			, <&key_physical_attrs 100 100  200  400       0     0     0>
-			, <&key_physical_attrs 100 100  300  400       0     0     0>
-			, <&key_physical_attrs 200 100  400  400       0     0     0>
-			, <&key_physical_attrs 100 100  500  400       0     0     0>
-			, <&key_physical_attrs 100 100  600  400       0     0     0>
-			, <&key_physical_attrs 100 100  700  400       0     0     0>
-			, <&key_physical_attrs 100 100  800  400       0     0     0>
-			, <&key_physical_attrs 100 100  900  400       0     0     0>
-			, <&key_physical_attrs 100 100  100  500       0     0     0>
-			, <&key_physical_attrs 100 100  200  500       0     0     0>
-			, <&key_physical_attrs 100 100  300  550       0     0     0>
-			, <&key_physical_attrs 200 100  350  650       0     0     0>
-			, <&key_physical_attrs 100 100  400  750       0     0     0>
-			, <&key_physical_attrs 100 100  500  750       0     0     0>
-			, <&key_physical_attrs 100 100  550  650       0     0     0>
-			, <&key_physical_attrs 100 100  600  550       0     0     0>
-			, <&key_physical_attrs 100 100  700  500       0     0     0>
-			, <&key_physical_attrs 100 100  800  500       0     0     0>
-			;
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100    0    0       0     0     0>
+            , <&key_physical_attrs 100 100 1400    0       0     0     0>
+			, <&key_physical_attrs 100 100  100   50       0     0     0>
+            , <&key_physical_attrs 100 100  200    0       0     0     0>
+            , <&key_physical_attrs 100 100  300    0       0     0     0>
+            , <&key_physical_attrs 100 100  400   50       0     0     0>
+            , <&key_physical_attrs 100 100  500   50       0     0     0>
+            , <&key_physical_attrs 100 100  900   50       0     0     0>
+            , <&key_physical_attrs 100 100 1000   50       0     0     0>
+            , <&key_physical_attrs 100 100 1100    0       0     0     0>
+            , <&key_physical_attrs 100 100 1200    0       0     0     0>
+            , <&key_physical_attrs 100 100 1300   50       0     0     0>
+            , <&key_physical_attrs 100 100  100  150       0     0     0>
+            , <&key_physical_attrs 100 100  200  100       0     0     0>
+            , <&key_physical_attrs 100 100  300  100       0     0     0>
+            , <&key_physical_attrs 100 100  400  150       0     0     0>
+            , <&key_physical_attrs 100 100  500  150       0     0     0>
+            , <&key_physical_attrs 100 100  900  150       0     0     0>
+            , <&key_physical_attrs 100 100 1000  150       0     0     0>
+            , <&key_physical_attrs 100 100 1100  100       0     0     0>
+            , <&key_physical_attrs 100 100 1200  100       0     0     0>
+            , <&key_physical_attrs 100 100 1300  150       0     0     0>
+            , <&key_physical_attrs 100 100  100  250       0     0     0>
+            , <&key_physical_attrs 100 100  200  200       0     0     0>
+            , <&key_physical_attrs 100 100  300  200       0     0     0>
+            , <&key_physical_attrs 100 100  400  250       0     0     0>
+            , <&key_physical_attrs 100 100  500  250       0     0     0>
+            , <&key_physical_attrs 100 100  900  250       0     0     0>
+            , <&key_physical_attrs 100 100 1000  250       0     0     0>
+            , <&key_physical_attrs 100 100 1100  200       0     0     0>
+            , <&key_physical_attrs 100 100 1200  200       0     0     0>
+            , <&key_physical_attrs 100 100 1300  250       0     0     0>
+            , <&key_physical_attrs 100 100  100  350       0     0     0>
+            , <&key_physical_attrs 100 100  200  300       0     0     0>
+            , <&key_physical_attrs 100 100  300  300       0     0     0>
+            , <&key_physical_attrs 100 100  400  350       0     0     0>
+            , <&key_physical_attrs 100 100  500  350       0     0     0>
+            , <&key_physical_attrs 100 100  900  350       0     0     0>
+            , <&key_physical_attrs 100 100 1000  350       0     0     0>
+            , <&key_physical_attrs 100 100 1100  300       0     0     0>
+            , <&key_physical_attrs 100 100 1200  300       0     0     0>
+            , <&key_physical_attrs 100 100 1300  350       0     0     0>
+            , <&key_physical_attrs 100 100  200  400       0     0     0>
+            , <&key_physical_attrs 100 100  300  400       0     0     0>
+            , <&key_physical_attrs 100 100 1100  400       0     0     0>
+            , <&key_physical_attrs 100 100 1200  400       0     0     0>
+            , <&key_physical_attrs 150 100  450  500       0     0     0>
+            , <&key_physical_attrs 150 100  900  500       0     0     0>
+            , <&key_physical_attrs 150 100  500  600       0     0     0>
+            , <&key_physical_attrs 150 100  850  600       0     0     0>
+            , <&key_physical_attrs 100 100  565  700       0     0     0>
+            , <&key_physical_attrs 100 100  835  700       0     0     0>
+            ;
 	};
 
 	default_transform: keymap_transform_0 {
@@ -93,8 +93,8 @@
 			RC(2,0) RC(2,1) RC(2,2) RC(2,3) RC(2,4)                  RC(2,5) RC(2,6) RC(2,7) RC(2,8) RC(2,9)
 			RC(3,0) RC(3,1) RC(3,2) RC(3,3) RC(3,4)                  RC(3,5) RC(3,6) RC(3,7) RC(3,8) RC(3,9)
 			        RC(4,1) RC(4,2)                                                  RC(4,7) RC(4,8)
-			                        RC(4,4)                                  RC(4,6)
-			                            RC(4,3)                           RC(4,5)
+			                        RC(4,4)                                  RC(4,5)
+			                            RC(4,3)                           RC(4,6)
 			                                RC(5,0)                  RC(5,5)
 		>;
 	};
@@ -153,13 +153,14 @@
 	sensors {
 		compatible = "zmk,keymap-sensors";
 		sensors = <&left_encoder &right_encoder>;
+		triggers-per-rotation = <20>;
 	};
 
 	left_encoder: left_encoder {
 		compatible = "alps,ec11";
 		a-gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		//steps = <80>;
+		steps = <80>;
 		status = "disabled";
 	};
 
@@ -167,7 +168,7 @@
 		compatible = "alps,ec11";
 		a-gpios = <&gpio0 22 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
 		b-gpios = <&gpio0 24 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
-		//steps = <80>;
+		steps = <80>;
 		status = "disabled";
 	};
 
@@ -185,10 +186,10 @@
         compatible = "zmk,input-listener";
         status = "disabled";
         input-processors = 
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,//this gets it to the default installation orientation
-            <&zip_xy_scaler 1 3>,//multiply sensitivity by 1, divide by 3 (make it slower for scrolling)
-            <&zip_xy_to_scroll_mapper>,//make this trackball output scrolling events by default instead of cursor movement
-            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;//invert vertical scrolling so that the view moves in the same direction as the top of the trackball.
+            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,      // this gets it to the default installation orientation
+            <&zip_xy_scaler 1 16>,       // multiply sensitivity by 1, divide by 3 (make it slower for scrolling)
+            <&zip_xy_to_scroll_mapper>, // make this trackball output scrolling events by default instead of cursor movement
+            <&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>; // invert vertical scrolling so that the view moves in the same direction as the top of the trackball.
     };
 
     right_listener: right_listener {
@@ -196,8 +197,10 @@
         status = "disabled";
         device = <&trackball_peripheral_split>;
         input-processors =
-            <&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>,//this gets it to the default installation orientation
-            <&zip_temp_layer 3 500>;//activate layer 3 within 500ms of the trackball moving
+				<&zip_scroll_transform INPUT_TRANSFORM_Y_INVERT>;
+        //    <&zip_x_scaler 4 1>;
+			//<&zip_xy_transform INPUT_TRANSFORM_XY_SWAP>; // this gets it to the default installation orientation
+            //,<&zip_temp_layer 3 500>;                 // activate layer 3 within 500ms of the trackball moving
     };
 };
 
@@ -282,7 +285,7 @@ nice_view_spi: &spi2 {
 	pinctrl-0 = <&screen_default>;
 	pinctrl-1 = <&screen_sleep>;
 	pinctrl-names = "default", "sleep";
-	cs-gpios =  <&gpio1 9 GPIO_ACTIVE_HIGH>;
+	cs-gpios = <&gpio1 9 GPIO_ACTIVE_HIGH>;
 
 	// screen: ls0xx@0 {
 	// 	compatible = "sharp,ls0xx";

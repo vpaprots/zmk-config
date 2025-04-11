@@ -9,3 +9,226 @@ properties:
   irq-gpios:
     type: phandle-array
     required: true
+  
+  # (main)
+  batlowv:
+    type: int
+    description: Battery Precharge to Fast Charge Threshold 2800mV-3000mV
+    default: 3000
+    enum:
+    - 2800
+    - 3000
+  
+  iprechg:
+    type: int
+    description: Precharge Current Limit 64mA - 1024mA 
+    default: 128
+  
+  vreg:
+    type: int
+    description: Charge Voltage Limit 3840mV - 4608mV
+    default: 4208
+  
+  ichg:
+    type: int
+    description: Fast Charge Current Limit 0-5056mA
+    default: 2048
+  
+  iterm:
+    type: int
+    description: Termination Current Limit 64mA - 1024mA
+    default: 256
+  
+  sys_min:
+    type: int
+    description: Minimum System Voltage Limit 3000mV-3700mV
+    default: 3500 #(Vsys == VDDH on nrf, VDDH-VDD>=0.3V, so if VDD=3.3V, Vsys=3.6V)
+  
+  vrechg:
+    type: int
+    description: Battery Recharge Threshold Offset 100mV-200mV
+    default: 100
+  
+  treg:
+    type: int
+    description: Thermal Regulation Threshold 60-120C
+    default: 120
+  
+  bat_comp:
+    type: int
+    description: IR Compensation Resistor Setting 0-140mOhm
+    default: 0
+  
+  vclamp:
+    type: int
+    description: IR Compensation Voltage Clamp 0-0.224V
+    default: 0
+ 
+  # (features)
+  en_hiz:
+    type: boolean
+    description: Enable HIZ Mode
+    # default: false
+  
+  ico_en:
+    type: boolean
+    description: Input Current Optimizer (ICO) Enable
+    #default: true
+  
+  hvdcp_en:
+    type: boolean
+    description: High Voltage DCP Enable
+    #default: true
+  
+  maxc_en:
+    type: boolean
+    description: MaxCharge Adapter Enable
+    #default: true
+  
+  auto_dpdm_en:
+    type: boolean
+    description: Automatic D+/D- Detection Enable when VBUS plugged in
+    #default: true
+  
+  bat_loaden:
+    type: boolean
+    description: Battery Load (IBATLOAD) Enable
+    # default: false
+  
+  chg_config:
+    type: boolean
+    description: Charge Enable Configuration (Battery charging is enabled by setting CHG_CONFIG bit, /CE pin is low and ICHG register is not 0 mA)
+    #default: true
+  
+  en_term:
+    type: boolean
+    description: Charging Termination Enable
+    #default: true
+  
+  batfet_dly:
+    type: boolean
+    description: BATFET turn off delay control, tSM_DLY=10s-15s
+    #default: (off, no delay) 
+  
+  batfet_rst_en:
+    type: boolean
+    description: BATFET full system reset enable
+    #default: (enabled)
+  
+  # (input voltage/current)
+  iinlim:
+    type: int
+    description: Input Current Limit 0.1A-3.5A, changed automaticallly after input source type detection is completed
+    default: 500
+  
+  vindpm_os:
+    type: int
+    description: Input Voltage Limit Offset 0V - 3.1V, used to calculate VINDPM threshold
+    default: 500
+  
+  force_vindpm:
+    type: boolean
+    description: VINDPM Threshold Setting Method
+    # default: false
+  
+  vindpm:
+    type: int
+    description: Absolute VINDPM Threshold 3.9V - 15.3V
+    default: 4400
+  
+  # (pins)
+  en_ilim:
+    type: boolean
+    description: Enable ILIM Pin
+    #default: true
+  
+  stat_dis:
+    type: boolean
+    description: STAT Pin Disable
+    #default: (pin enabled)
+  # (timers)
+  watchdog:
+    type: int
+    description: I2C Watchdog Timer Setting disabled-160s
+    default: 0
+    enum:
+    - 0
+    - 40
+    - 80
+    - 160 #120?
+  
+  en_timer:
+    type: boolean
+    description: Charging Safety Timer Enable
+    #default: true
+  
+  chg_timer:
+    type: int
+    description: Fast Charge Timer Setting 5hrs-20hrs
+    default: 12
+    enum:
+    - 5
+    - 8
+    - 12
+    - 20
+  
+  tmr2x_en:
+    type: boolean
+    description: Safety Timer Setting during DPM or Thermal Regulation
+    # default: true (slowed down by 2X)
+  
+  # (boost)
+  bcold:
+    type: int
+    description: Boost Mode Cold Temperature Monitor Threshold
+    default: 77
+    enum:
+    - 77
+    - 80
+  
+  # bhot:
+  #   type: int
+  #   description: Boost Mode Hot Temperature Monitor Threshold
+  #   default: (34.75%)
+  
+  boost_freq:
+    type: int
+    description: Boost Mode Frequency Selection
+    default: 500
+    enum:
+    - 500
+    - 1500
+  
+  otg_config:
+    type: boolean
+    description: Boost (OTG) Mode Configuration
+    #default: true
+  
+  boostv:
+    type: int
+    description: Boost Mode Voltage Regulation 4.55V - 5.51V
+    default: 5126
+  
+  # (pumpx)
+  en_pumpx:
+    type: boolean
+    description: Current pulse control Enable
+    # default: false
+  
+  pumpx_up:
+    type: boolean
+    description: Current pulse control voltage up enable
+    # default: false
+  
+  pumpx_dn:
+    type: boolean
+    description: Current pulse control voltage down enable
+    # default: false
+
+
+# Stage 1: pre-charge IPRECHARGE (until BATLOWV (2.8V/3V))
+# Stage 2: constant current (until Charge V = 4.2V)
+# Stage 3: constant voltage (until 0.02C = 68mA; cut off sooner for longer life)
+# Stage 4: discarge (until 2.65V; )
+# - status notifications to LEDs?
+# - poweroff on low voltage and idle

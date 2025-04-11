@@ -1,8 +1,13 @@
+module = BQ25895
+module-str = bq25895
+source "${ZEPHYR_BASE}/subsys/logging/Kconfig.template.log_config"
+
 config CHARGER_BQ25895
 	bool "BQ25895 Battery Charger"
 	default y
-	depends on DT_HAS_TI_BQ25895_ENABLED
+	depends on DT_HAS_ZMK_BQ25895_ENABLED
 	select I2C
+	select CHARGER
 	help
 	  Enable BQ25895 battery charger driver.
 

@@ -21,7 +21,8 @@
 		zephyr,sram = &sram0;
 		zephyr,boot-mode = &retention0;
 		zephyr,flash = &flash0;
-		zmk,battery = &fuel_gauge;
+		//zmk,battery = &fuel_gauge;
+		zmk,battery = &charger;
 		zmk,default-power-domain = &core_power_domain;
 	};
 
@@ -88,21 +89,27 @@
 
 	fuel_gauge: max17048@36 {
 		compatible = "zmk,maxim-max17048";
-		status = "okay";
-		//label = "BATTERY"; //deprecated
+		//status = "okay";
 		reg = <0x36>;
 	};
 
-	// charger: bq25895@6a {
-	// 	compatible = "ti,bq25895";
-	// 	status = "okay";
-	// 	// label = "BATTERY";
-	// 	reg = <0x6a>;
-	// 	// FIX PIN
-	// 	irq-gpios = <&gpio0 17 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-	// 	//status = <&led_animation 5>;
-	// 	//status-bar = <5 6 10 8>;
-	// };
+	charger: bq25895@6a {
+		compatible = "zmk,bq25895";
+		status = "okay";
+		reg = <0x6a>;
+		irq-gpios = <&gpio0 17 (GPIO_ACTIVE_HIGH)>;
+		//status = <&led_animation 5>;
+		//status-bar = <5 6 10 8>;
+		batlowv = <2800>;
+		iprechg = <512>;
+		ichg = <5056>;
+		iterm = <512>;
+		sys_min = <3300>;
+		/delete-property/ otg_config;
+		/delete-property/ ico_en;
+		/delete-property/ maxc_en;
+		hvdcp_en;
+	};
 };
 
 &gpiote {
